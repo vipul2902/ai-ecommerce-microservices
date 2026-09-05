@@ -65,7 +65,8 @@ _ReSharper*/
 *.user
 *.userosscache
 *.sln.docstates
-launchSettings.json
+# Note: launchSettings.json is intentionally NOT ignored — it holds only local
+# ports/profile names (no secrets) and is meant to be shared/tracked.
 
 ## ---------------------------
 ## Secrets / environment files

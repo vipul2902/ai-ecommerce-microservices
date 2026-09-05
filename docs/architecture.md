@@ -44,11 +44,18 @@ expert would recognize as a distinct responsibility.
   requests to the correct backend service. Candidate home for cross-cutting
   concerns (auth forwarding, rate limiting) — decided when Phase 6 is
   reached.
-- **User Service** — User registration, authentication, and profile data.
-  Owns identity; other services trust its authentication decisions rather
-  than re-implementing them.
-- **Product Service** — Product catalog: products, categories, pricing, and
-  inventory visibility.
+- **User Service** *(implemented, Phase 2)* — User registration, authentication,
+  and profile data. Owns identity; other services trust its authentication
+  decisions rather than re-implementing them. JWTs are issued by this service
+  and are expected to be validated (not re-authenticated) by whichever service
+  receives them. See [src/UserService/README.md](../src/UserService/README.md)
+  for its concrete endpoints, database schema, and auth flow.
+- **Product Service** *(implemented, Phase 3)* — Product catalog: products,
+  categories, pricing, and stock visibility. Currently has no authentication —
+  all endpoints are public, since cross-service identity propagation is a
+  Phase 5/6 decision not yet made (see sections 4 and 8 below). See
+  [src/ProductService/README.md](../src/ProductService/README.md) for its
+  concrete endpoints and database schema.
 - **Order Service** — Order lifecycle: creating orders from a cart,
   tracking order status, and coordinating with Product (to check
   availability) and Payment (to request payment) services.

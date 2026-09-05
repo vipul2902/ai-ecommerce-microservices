@@ -4,8 +4,11 @@ A production-style **learning project**: a small e-commerce platform built as
 independently deployable .NET microservices, developed incrementally to
 practice distributed-systems and cloud-native engineering end to end.
 
-> **Status:** Foundation stage. Only repository structure and architecture
-> documentation exist so far — no services are implemented yet. See
+> **Status:** Phase 3 in progress. Repository foundation and architecture docs are in
+> place (Phase 1). **User Service** (Phase 2) and **Product Service** (Phase 3) are
+> implemented — see [src/UserService/README.md](src/UserService/README.md) and
+> [src/ProductService/README.md](src/ProductService/README.md) for their endpoints,
+> databases, and design notes. All other services are still placeholders. See
 > [docs/development-roadmap.md](docs/development-roadmap.md) for the phased
 > plan.
 
@@ -32,8 +35,8 @@ complexity.
 | Service | Responsibility |
 |---|---|
 | **API Gateway** | Single entry point for clients; routes requests to backend services |
-| **User Service** | User registration, authentication, profile data |
-| **Product Service** | Product catalog, categories, pricing |
+| **User Service** ✅ | User registration, authentication, profile data — [implemented](src/UserService/README.md) |
+| **Product Service** ✅ | Product catalog, categories, pricing — [implemented](src/ProductService/README.md) |
 | **Order Service** | Order lifecycle and orchestration |
 | **Payment Service** | Payment processing and payment state |
 | **Notification Service** | Outbound notifications (order updates, etc.) |

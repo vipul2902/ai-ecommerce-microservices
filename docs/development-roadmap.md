@@ -32,13 +32,15 @@ reasoning behind the planned design.
 Establish repository structure, `.gitignore`, and architecture
 documentation. No application code. *(This phase.)*
 
-### Phase 2 — User Service + Authentication
+### Phase 2 — User Service + Authentication ✅
 Implement the User Service: registration, login, and authentication.
 First real ASP.NET Core Web API and first EF Core + SQL Server database.
+See [src/UserService/README.md](../src/UserService/README.md) for what was built.
 
-### Phase 3 — Product Service
+### Phase 3 — Product Service ✅
 Implement the Product Service: catalog, categories, pricing. Second
 independent service with its own database.
+See [src/ProductService/README.md](../src/ProductService/README.md) for what was built.
 
 ### Phase 4 — Order Service
 Implement the Order Service: creating and tracking orders. Introduces the
